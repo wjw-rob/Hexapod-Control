@@ -1,0 +1,2 @@
+hexapod_description2:wjw
+-DCATKIN_DEVEL_PREFIX=/home/wjw/1wjw/Hexapod/devel -DCMAKE_INSTALL_PREFIX=/home/wjw/1wjw/Hexapod/install -G Unix Makefiles

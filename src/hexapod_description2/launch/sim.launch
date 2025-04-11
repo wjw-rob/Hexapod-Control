@@ -1,0 +1,12 @@
+<launch>
+  
+  <!-- position control -->
+  <!-- <include file="$(find  hexapod_description2)/launch/Positioncontroller.launch"/> -->
+  <include file="$(find  hexapod_description2)/launch/gazebo_mdf_inertia.launch"/>
+  <!--注释 modified inertia"（修改后的惯性），暗示这个 URDF 文件定义了调整过惯性参数的六足机器人模型-->
+
+  <!-- torque control -->
+  <include file="$(find  hexapod_description2)/launch/Touquecontroller.launch"/>
+  <!-- <include file="$(find  hexapod_description2)/launch/gazebo_ori_inertia.launch"/> -->
+  
+</launch>

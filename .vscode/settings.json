@@ -1,0 +1,18 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "files.associations": {
+        "iomanip": "cpp",
+        "random": "cpp",
+        "dense": "cpp",
+        "core": "cpp",
+        "csignal": "cpp",
+        "iostream": "cpp",
+        "cmath": "cpp",
+        "complex": "cpp"
+    }
+}

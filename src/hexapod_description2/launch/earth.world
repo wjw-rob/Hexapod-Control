@@ -1,0 +1,201 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+    <world name="default">
+
+        <!-- 物理设置 -->
+        <physics type="ode">
+            <max_step_size>0.0002</max_step_size>
+            <real_time_factor>1</real_time_factor>
+            <real_time_update_rate>5000</real_time_update_rate>
+            <gravity>0 0 -9.81</gravity>
+            <ode>
+                <solver>
+                    <type>quick</type>  
+                    <iters>50</iters> 
+                    <sor>1.3</sor>
+                </solver>  
+                <constraints>
+                    <cfm>0.0</cfm>
+                    <erp>0.2</erp>
+                    <contact_max_correcting_vel>10.0</contact_max_correcting_vel>
+                    <contact_surface_layer>0.001</contact_surface_layer>
+                </constraints>  
+            </ode>
+        </physics>
+
+        <!-- 场景设置 -->
+        <scene>
+            <sky>
+                <clouds>
+                    <speed>12</speed>
+                </clouds>
+            </sky>
+        </scene>
+
+        <!-- 全局光源 -->
+        <include>
+            <uri>model://sun</uri>
+        </include>
+
+        <!-- 地面 -->
+        <include>
+            <uri>model://ground_plane</uri>
+        </include>
+
+        <!-- 五阶台阶 -->
+        <model name="five_steps">
+            <static>true</static>
+
+            <!-- 第一阶 -->
+            <link name="step_1">
+                <pose>1.5 0 0.025 0 0 0</pose> <!-- [修改点 1-1] x=1.5 (原点偏移 1.5m) -->
+                <collision name="step_collision_1">
+                    <geometry>
+                        <box>
+                            <size>1.0 2.0 0.05</size> <!-- 保持长 1.0m, 宽 2.0m -->
+                        </box>
+                    </geometry>
+                    <friction>
+                        <ode>
+                            <mu>1.5</mu>
+                        </ode>
+                    </friction>
+                </collision>
+                <visual name="step_visual_1">
+                    <geometry>
+                        <box>
+                            <size>1.0 2.0 0.05</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <ambient>0.2 0.2 0.2 1.0</ambient>
+                        <diffuse>0.421 0.225 0.0 1.0</diffuse>
+                    </material>
+                </visual>
+                <gravity>true</gravity>
+                <self_collide>true</self_collide>
+            </link>
+
+            <!-- 第二阶 -->
+            <link name="step_2">
+                <pose>2.5 0 0.075 0 0 0</pose> <!-- [修改点 2-1] x=2.5 (1.5+1.0) -->
+                <collision name="step_collision_2">
+                    <geometry>
+                        <box>
+                            <size>1.0 2.0 0.05</size>
+                        </box>
+                    </geometry>
+                    <friction>
+                        <ode>
+                            <mu>1.5</mu>
+                        </ode>
+                    </friction>
+                </collision>
+                <visual name="step_visual_2">
+                    <geometry>
+                        <box>
+                            <size>1.0 2.0 0.05</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <ambient>0.2 0.2 0.2 1.0</ambient>
+                        <diffuse>0.421 0.225 0.0 1.0</diffuse>
+                    </material>
+                </visual>
+                <gravity>true</gravity>
+                <self_collide>true</self_collide>
+            </link>
+
+            <!-- 第三阶 -->
+            <link name="step_3">
+                <pose>3.5 0 0.125 0 0 0</pose> <!-- [修改点 3-1] x=3.5 (2.5+1.0) -->
+                <collision name="step_collision_3">
+                    <geometry>
+                        <box>
+                            <size>1.0 2.0 0.05</size>
+                        </box>
+                    </geometry>
+                    <friction>
+                        <ode>
+                            <mu>1.5</mu>
+                        </ode>
+                    </friction>
+                </collision>
+                <visual name="step_visual_3">
+                    <geometry>
+                        <box>
+                            <size>1.0 2.0 0.05</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <ambient>0.2 0.2 0.2 1.0</ambient>
+                        <diffuse>0.421 0.225 0.0 1.0</diffuse>
+                    </material>
+                </visual>
+                <gravity>true</gravity>
+                <self_collide>true</self_collide>
+            </link>
+
+            <!-- 第四阶 -->
+            <link name="step_4">
+                <pose>4.5 0 0.175 0 0 0</pose> <!-- [修改点 4-1] x=4.5 (3.5+1.0) -->
+                <collision name="step_collision_4">
+                    <geometry>
+                        <box>
+                            <size>1.0 2.0 0.05</size>
+                        </box>
+                    </geometry>
+                    <friction>
+                        <ode>
+                            <mu>1.5</mu>
+                        </ode>
+                    </friction>
+                </collision>
+                <visual name="step_visual_4">
+                    <geometry>
+                        <box>
+                            <size>1.0 2.0 0.05</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <ambient>0.2 0.2 0.2 1.0</ambient>
+                        <diffuse>0.421 0.225 0.0 1.0</diffuse>
+                    </material>
+                </visual>
+                <gravity>true</gravity>
+                <self_collide>true</self_collide>
+            </link>
+
+            <!-- 第五阶 -->
+            <link name="step_5">
+                <pose>5.5 0 0.225 0 0 0</pose> <!-- [修改点 5-1] x=5.5 (4.5+1.0) -->
+                <collision name="step_collision_5">
+                    <geometry>
+                        <box>
+                            <size>1.0 2.0 0.05</size>
+                        </box>
+                    </geometry>
+                    <friction>
+                        <ode>
+                            <mu>1.5</mu>
+                        </ode>
+                    </friction>
+                </collision>
+                <visual name="step_visual_5">
+                    <geometry>
+                        <box>
+                            <size>1.0 2.0 0.05</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <ambient>0.2 0.2 0.2 1.0</ambient>
+                        <diffuse>0.421 0.225 0.0 1.0</diffuse>
+                    </material>
+                </visual>
+                <gravity>true</gravity>
+                <self_collide>true</self_collide>
+            </link>
+        </model>
+
+    </world>
+</sdf>

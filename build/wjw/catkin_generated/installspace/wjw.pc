@@ -1,0 +1,8 @@
+prefix=/home/wjw/1wjw/Hexapod/install
+
+Name: wjw
+Description: Description of wjw
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
